@@ -1,12 +1,16 @@
 package martex.project.java.cadastrofuncionario.model;
 
-import lombok.Data;
+import lombok.*;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@Builder
+@Entity
 public class Usuario {
 
     @Id
@@ -23,10 +27,12 @@ public class Usuario {
     private String categoria;
 
     @ManyToOne
-    private String idFuncao;
+    @JoinColumn(name = "funcao_id")
+    private Funcao idfuncao;
 
     @ManyToOne
-    private String idSetor;
+    @JoinColumn(name = "setor_id")
+    private Setor idSetor;
 
 
 }

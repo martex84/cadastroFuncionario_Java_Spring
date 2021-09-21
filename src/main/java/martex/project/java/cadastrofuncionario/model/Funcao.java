@@ -1,15 +1,22 @@
 package martex.project.java.cadastrofuncionario.model;
 
-import lombok.Data;
+import lombok.*;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@EqualsAndHashCode
+@Builder
+@Entity
 public class Funcao {
+
 
     @Id
     @GeneratedValue
+    @Column(name = "funcao_id")
     private long id;
 
     private String nome;
